@@ -1,0 +1,29 @@
+.center-vertical {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+h1 {
+    text-align: center;
+}
+#comment-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+#comment-list {
+    max-width: 600px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+}
+.comment {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+}
