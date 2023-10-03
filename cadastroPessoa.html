@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Comentarios</title>
+    <title>Title</title>
 </head>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
@@ -15,7 +16,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="estiloTodos.css">
-<link rel="stylesheet" href="estiloComentarios.css">
+<link rel="stylesheet" href="estiloPaginaInicial.css">
 <link rel="stylesheet" href="comentarios.html">
 <link rel="stylesheet" href="login.html">
 <link rel="stylesheet" href="paginaInicial.html">
@@ -51,27 +52,40 @@
     </div>
 </nav>
 
+<div class="container mt-5">
+    <h2>Cadastro de Pessoas</h2>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" placeholder="Digite o seu nome" required>
+            </div>
 
-<h1>Página de Comentários</h1>
+            <div class="form-group col-md-6">
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" class="form-control" id="sobrenome" placeholder="Digite o seu sobrenome" required>
+            </div>
+        </div>
 
-<!-- Formulário para adicionar comentários -->
-<div id="comment-form">
-    <h2>Adicionar um Comentário</h2>
-    <form action="#" method="post">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required><br>
+        <div class="form-group">
+            <label for="numero">Número de Telefone:</label>
+            <input type="tel" class="form-control" id="numero" placeholder="Digite o seu número de telefone" required>
+        </div>
 
-        <label for="comment">Comentário:</label><br>
-        <textarea id="comment" name="comment" rows="4" cols="50" required></textarea><br>
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" class="form-control" id="email" placeholder="Digite o seu e-mail" required>
+            <small class="form-text text-muted">Certifique-se de digitar um e-mail válido.</small>
+        </div>
 
-        <input type="submit" value="Enviar Comentário">
+        <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input type="password" class="form-control" id="senha" placeholder="Digite a sua senha" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar Pessoa</button>
     </form>
 </div>
 
-<!-- Lista de comentários -->
-<h2>Comentários</h2>
-<ul id="comment-list">
-
-</ul>
 </body>
 </html>
