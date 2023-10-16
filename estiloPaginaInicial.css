@@ -27,12 +27,20 @@
             line-height: 1.6;
         }
 
-         body {
-                    font-family: Arial, sans-serif;
-                    margin: 0;
-                    padding: 0;
-                    background-color: #f2f2f2;
-                }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
 
                 header {
                     background-color: #333;
@@ -45,3 +53,50 @@
                     margin: 0;
                     font-size: 2em;
                 }
+
+.escondido {
+    display: none;
+}
+
+.green-button {
+    background-color: #4CAF50; /* Cor verde */
+    color: white; /* Texto em branco para contrastar */
+}
+
+#login-section {
+    max-width: 250px;
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#news-section {
+    flex-grow: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.news-article {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.news-article h3 {
+    margin-top: 0;
+}
+
+img {
+    max-width: 200px; /* Garante que a imagem não ultrapasse a largura do contêiner pai */
+    height: auto; /* Mantém a proporção da imagem ao ajustar a largura */
+    display: block; /* Remove espaços extras abaixo da imagem */
+    margin-bottom: 20px; /* Adiciona margem abaixo da imagem */
+}
+
+
+
+                                                                                                                     html

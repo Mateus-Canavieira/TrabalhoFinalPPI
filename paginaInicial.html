@@ -14,17 +14,17 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="arrumandoTudo.js"></script>
   <link rel="stylesheet" href="estiloTodos.css">
   <link rel="stylesheet" href="estiloPaginaInicial.css">
   <link rel="stylesheet" href="comentarios.html">
-  <link rel="stylesheet" href="login.html">
   <link rel="stylesheet" href="paginaInicial.html">
   <link rel="stylesheet" href="cadastros.html">
 
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Navbar</a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#teste"
@@ -35,10 +35,6 @@
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="paginaInicial.html">Página Inicial</a>
-      </li>
-
-      <li class="nav-item active">
-        <a class="nav-link" href="login.html">Login</a>
       </li>
 
       <li class="nav-item active">
@@ -56,26 +52,39 @@
   <h1>Notícias do mundo da Literatura</h1>
 </header>
 
-<div class="container">
-  <div class="noticia">
-    <h2 class="titulo-noticia">Lançamento de Novo Livro de Ficção</h2>
-    <p class="data">Publicado em 28 de Setembro de 2023</p>
-    <p class="corpo-noticia">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt odio nec purus rhoncus,
-      eget lacinia urna venenatis. Sed dignissim vestibulum sapien, vel mattis tellus malesuada nec.
-    </p>
-  </div>
 
-  <div class="noticia">
-    <h2 class="titulo-noticia">Entrevista com Autor Best-seller</h2>
-    <p class="data">Publicado em 25 de Setembro de 2023</p>
-    <p class="corpo-noticia">
-      Nesta entrevista exclusiva, o autor renomado John Doe fala sobre seu processo de escrita e suas
-      inspirações para suas obras mais recentes.
-    </p>
-  </div>
+<main>
+  <section id="news-section">
+    <h2>Últimas Notícias</h2>
+    <article class="news-article">
+      <h3>Autor de “Diário de uma Paixão” fala sobre fãs brasileiros, TikTok e cinema</h3>
+      <p>Em nova visita ao Brasil, Nicholas Sparks também revelou que a adaptação de um dos seus livros será gravada no país </p>
+      <p><img src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/10/Nicholas-Sparks-credito-Brad-Styron-1-e1697028385697.jpg?w=1220&h=674&crop=1"></p>
+    </article>
+    <article class="news-article">
+      <h3>Análise: O problema com a “regra de três” do prêmio Nobel </h3>
+      <p>Pesquisas cientifícas se tornaram mais colaborativas, o que dificulta seguir o regulamento Nobel de até três pessoas por prêmio; Especialistas debatem sobre por que há poucas mulheres laureadas </p>
+      <p><img src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/16067_9D0947948961796A.jpg?w=1220&h=674&crop=1"></p>
+    </article>
 
-  <!-- Adicione mais notícias conforme necessário -->
+  </section>
+
+  <section id="login-section">
+    <h2>Login</h2>
+    <form>
+      <label for="username">Usuário:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Senha:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button id="login" type="submit" onclick="login()">Entrar</button>
+    </form>
+  </section>
+  </main>
+<!-- Botões no Final da Página -->
+<div id="esconde" class="fixed-bottom text-right p-3">
+  <button type="button" class="btn btn-success green-button escondido">Biblioteca</button>
 </div>
 
 </body>

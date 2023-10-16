@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Busca</title>
 </head>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -15,16 +15,14 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="cadastroPessoajs.js"></script>
+<script src="arrumandoTudo.js"></script>
 <link rel="stylesheet" href="estiloTodos.css">
-<link rel="stylesheet" href="estiloPaginaInicial.css">
+<link rel="stylesheet" href="busca.css">
 <link rel="stylesheet" href="comentarios.html">
-<link rel="stylesheet" href="login.html">
 <link rel="stylesheet" href="paginaInicial.html">
 <link rel="stylesheet" href="cadastros.html">
 
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Navbar</a>
 
@@ -49,35 +47,47 @@
     </div>
 </nav>
 
+<h1>Exemplos de Livros</h1>
 
-<div class="container mt-5">
-    <form id="cadastroForm">
-        <div><h1> Faça o seu cadastro</h1></div>
-        <div class="form-group">
-            <label for="nome">Nome:</label>
-            <input type="text" class="form-control" id="nome" name="nome" required>
-        </div>
+<input type="text" id="searchInput" placeholder="Buscar por nome ou número">
+<button onclick="searchBooks()">Buscar</button>
 
-        <div class="form-group">
-            <label for="email">E-mail:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-            <label for="senha">Senha:</label>
-            <input type="password" class="form-control" id="senha" name="senha" required>
-        </div>
-
-        <div class="form-group">
-            <label for="confirmarSenha">Confirmar Senha:</label>
-            <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha" required>
-        </div>
-
-        <button type="button" class="btn btn-primary" onclick="validarCadastro()">Cadastrar</button>
-    </form>
+<div id="bookList">
+    <!-- Aqui serão exibidos os resultados da busca -->
 </div>
 
+<script>
+    // Dados dos livros
+    var books = [
+        { title: 'Dom Quixote', author: 'Miguel de Cervantes', summary: 'Um cavaleiro enlouquecido e seu fiel escudeiro viajam pela Espanha.' },
+        { title: '1984', author: 'George Orwell', summary: 'Um homem luta contra um governo totalitário que controla o pensamento e a realidade.' },
+        { title: 'Cem Anos de Solidão', author: 'Gabriel García Márquez', summary: 'A história da família Buendía ao longo de várias gerações em Macondo.' },
+        { title: 'O Senhor dos Anéis', author: 'J.R.R. Tolkien', summary: 'Uma jornada épica para destruir um anel que concede poder absoluto.' },
+        { title: 'Harry Potter e a Pedra Filosofal', author: 'J.K. Rowling', summary: 'As aventuras de um jovem bruxo em sua jornada pela escola de magia de Hogwarts.' }
+    ];
 
+    // Função para buscar livros por nome ou número
+    function searchBooks() {
+        var searchInput = document.getElementById('searchInput').value.toLowerCase();
+        var bookList = document.getElementById('bookList');
+        bookList.innerHTML = ''; // Limpa resultados anteriores
+
+        // Filtra os livros com base na entrada do usuário
+        var filteredBooks = books.filter(function (book, index) {
+            return book.title.toLowerCase().includes(searchInput) ||
+                (index + 1).toString() === searchInput;
+        });
+
+        // Exibe os resultados na página
+        filteredBooks.forEach(function (book, index) {
+            var bookDiv = document.createElement('div');
+            bookDiv.innerHTML = `<h3>${index + 1}. ${book.title}</h3>
+                                     <p><strong>Autor:</strong> ${book.author}</p>
+                                     <p><strong>Resumo:</strong> ${book.summary}</p>`;
+            bookList.appendChild(bookDiv);
+        });
+    }
+</script>
 
 </body>
 </html>

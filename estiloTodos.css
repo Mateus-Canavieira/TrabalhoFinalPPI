@@ -1,2 +1,13 @@
 
+body {
+    margin: 0;
+    padding: 0;
+}
 
+.nav-item.active a {
+    color: #007bff !important;
+}
+
+.navbar{
+    width: 100%;
+}
