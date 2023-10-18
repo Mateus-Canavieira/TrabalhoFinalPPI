@@ -1,6 +1,4 @@
 
-    // Adiciona um ouvinte de evento para o botão de login
-    function login() {
-        document.getElementById('botaoEscondido').classList.remove("escondido");
-        
-    }
+document.getElementById("loginbotao").addEventListener("click", function() {
+    window.location.href = "paginaInicial2.html";
+});
